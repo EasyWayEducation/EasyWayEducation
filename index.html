@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easyway Educational Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Open+Sans:wght@400;600&display=swap');
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #FFF8DC;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .nav-link:hover {
+            color: #D32F2F;
+        }
+        
+        .active {
+            color: #D32F2F;
+            font-weight: bold;
+        }
+        
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .accordion.active .accordion-content {
+            max-height: 500px;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(255, 248, 220, 0.9), rgba(255, 248, 220, 0.9)), url('https://images.unsplash.com/photo-1523050854058-8df9012c9f7c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+    
+    <link rel="icon" href="https://i.imgur.com/TK75jJm.png" type="image/png">
+</head>
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl mr-2 overflow-hidden">
+                    <img src="https://i.imgur.com/TK75jJm.png" alt="Logo" class="w-full h-full object-cover">
+                  </div>
+                  
+                <h1 class="text-2xl font-bold text-blue-600">EasyWay</h1>
+            </div>
+            
+            <nav class="hidden md:block">
+                <ul class="flex space-x-8">
+                    <li><a href="#home" class="nav-link text-gray-800 hover:text-blue-600 transition">Home</a></li>
+                    <li><a href="#about" class="nav-link text-gray-800 hover:text-blue-600 transition">About</a></li>
+                    <li><a href="#courses" class="nav-link text-gray-800 hover:text-blue-600 transition">Courses</a></li>
+                    <li><a href="#services" class="nav-link text-gray-800 hover:text-blue-600 transition">Services</a></li>
+                    <li><a href="#contact" class="nav-link text-gray-800 hover:text-blue-600 transition">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <button class="md:hidden text-gray-800" id="mobile-menu-button">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-white py-4 px-4" id="mobile-menu">
+            <ul class="space-y-4">
+                <li><a href="#home" class="block text-gray-800 hover:text-blue-600 transition">Home</a></li>
+                <li><a href="#about" class="block text-gray-800 hover:text-blue-600 transition">About</a></li>
+                <li><a href="#courses" class="block text-gray-800 hover:text-blue-600 transition">Courses</a></li>
+                <li><a href="#services" class="block text-gray-800 hover:text-blue-600 transition">Services</a></li>
+                <li><a href="#contact" class="block text-gray-800 hover:text-blue-600 transition">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero py-20 md:py-32">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold text-blue-600 mb-4">Easyway Educational Academy</h1>
+            <h2 class="text-2xl md:text-3xl text-gray-800 mb-8">Hattiban, Lalitpur</h2>
+            <p class="text-xl text-gray-700 max-w-3xl mx-auto mb-10">
+                Providing pre-medical, pre-engineering, +2 level tuition, visa documentation, and abroad study services.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition duration-300">
+                    <i class="fas fa-phone-alt mr-2"></i> Contact Us
+                </a>
+                <a href="#contact" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full transition duration-300">
+                    <i class="fas fa-pen mr-2"></i> Enroll Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-blue-600 mb-12">About Us</h2>
+            
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80" 
+                         alt="Easyway Educational Academy" 
+                         class="rounded-lg shadow-xl w-full h-auto">
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <p class="text-lg text-gray-700 mb-6">
+                        Easyway Educational Academy is a premier academic institution based in Hattiban, Lalitpur. We specialize in offering pre-medical and pre-engineering entrance preparation, +2 level tuition, and complete support for students aiming to study abroad.
+                    </p>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold text-red-600 mb-3">Our Mission</h3>
+                        <p class="text-gray-700 mb-6">
+                            To help students achieve their academic and international dreams through quality education and personalized guidance.
+                        </p>
+                        
+                        <h3 class="text-xl font-bold text-red-600 mb-3">Our Vision</h3>
+                        <p class="text-gray-700 mb-6">
+                            To be recognized as a leading educational institution that delivers top-quality coaching with a personalized touch.
+                        </p>
+                        
+                        <h3 class="text-xl font-bold text-red-600 mb-3">Core Values</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                                    <i class="fas fa-shield-alt text-blue-600"></i>
+                                </div>
+                                <span class="text-gray-700">Integrity</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                                    <i class="fas fa-star text-blue-600"></i>
+                                </div>
+                                <span class="text-gray-700">Excellence</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                                    <i class="fas fa-lightbulb text-blue-600"></i>
+                                </div>
+                                <span class="text-gray-700">Innovation</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                                    <i class="fas fa-hands-helping text-blue-600"></i>
+                                </div>
+                                <span class="text-gray-700">Support</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-blue-50 p-6 rounded-lg">
+                        <div class="flex items-center">
+                            <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center text-white text-2xl mr-4">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-red-600">Dilli Raj Chaudhary</h4>
+                                <p class="text-gray-700">Academic Director</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-blue-600 mb-12">Our Courses</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Pre-Medical -->
+                <div class="course-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                    <div class="bg-red-600 py-4 px-6">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-red-600 mr-4">
+                                <i class="fas fa-heartbeat"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">Pre-Medical Classes</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-700 mb-4">
+                            Comprehensive preparation for MBBS and paramedical entrance exams with expert faculty and proven methodologies.
+                        </p>
+                        <h4 class="font-bold text-gray-800 mb-2">Subjects Covered:</h4>
+                        <ul class="text-gray-700 space-y-1 mb-4">
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Biology</li>
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Chemistry</li>
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Physics</li>
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i> General Knowledge</li>
+                        </ul>
+                        <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Pre-Engineering -->
+                <div class="course-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                    <div class="bg-blue-600 py-4 px-6">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-blue-600 mr-4">
+                                <i class="fas fa-calculator"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">Pre-Engineering Classes</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-700 mb-4">
+                            Focused preparation for BE/BTech entrance exams with comprehensive coverage of all required subjects.
+                        </p>
+                        <h4 class="font-bold text-gray-800 mb-2">Subjects Covered:</h4>
+                        <ul class="text-gray-700 space-y-1 mb-4">
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Mathematics</li>
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Physics</li>
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Chemistry</li>
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Engineering Aptitude</li>
+                        </ul>
+                        <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- +2 Level Tuition -->
+                <div class="course-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                    <div class="bg-green-600 py-4 px-6">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-green-600 mr-4">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">+2 Level Tuition</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-700 mb-4">
+                            Targeted coaching for students in Science, Management, and Humanities streams at +2 level.
+                        </p>
+                        <h4 class="font-bold text-gray-800 mb-2">Subjects Covered:</h4>
+                        <ul class="text-gray-700 space-y-1 mb-4">
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Mathematics</li>
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Accountancy</li>
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Physics</li>
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i> English</li>
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Economics</li>
+                        </ul>
+                        <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-blue-600 mb-12">Our Services</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Visa Documentation -->
+                <div class="bg-gray-50 rounded-lg p-6 shadow-md hover:shadow-lg transition duration-300">
+                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 text-2xl mb-4">
+                        <i class="fas fa-passport"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Visa Documentation</h3>
+                    <p class="text-gray-700">
+                        Comprehensive assistance with all visa documentation requirements for studying abroad, ensuring a smooth application process.
+                    </p>
+                </div>
+                
+                <!-- Abroad Study Guidance -->
+                <div class="bg-gray-50 rounded-lg p-6 shadow-md hover:shadow-lg transition duration-300">
+                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 text-2xl mb-4">
+                        <i class="fas fa-globe-americas"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Abroad Study Guidance</h3>
+                    <p class="text-gray-700">
+                        Expert counseling on selecting the right country, university, and course based on your academic profile and career goals.
+                    </p>
+                </div>
+                
+                <!-- Personalized Tutoring -->
+                <div class="bg-gray-50 rounded-lg p-6 shadow-md hover:shadow-lg transition duration-300">
+                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 text-2xl mb-4">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Personalized Tutoring</h3>
+                    <p class="text-gray-700">
+                        One-on-one tutoring sessions tailored to individual learning needs and pace, ensuring maximum understanding and retention.
+                    </p>
+                </div>
+                
+                <!-- Language Preparation -->
+                <div class="bg-gray-50 rounded-lg p-6 shadow-md hover:shadow-lg transition duration-300">
+                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 text-2xl mb-4">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Language Preparation</h3>
+                    <p class="text-gray-700">
+                        Specialized training for English proficiency tests like IELTS, TOEFL, and PTE with experienced instructors and practice materials.
+                    </p>
+                </div>
+                
+                <!-- Test Preparation -->
+                <div class="bg-gray-50 rounded-lg p-6 shadow-md hover:shadow-lg transition duration-300">
+                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 text-2xl mb-4">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Test Preparation</h3>
+                    <p class="text-gray-700">
+                        Comprehensive preparation for standardized tests like SAT, GRE, and GMAT with mock tests and performance analysis.
+                    </p>
+                </div>
+                
+                <!-- Career Counseling -->
+                <div class="bg-gray-50 rounded-lg p-6 shadow-md hover:shadow-lg transition duration-300">
+                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 text-2xl mb-4">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Career Counseling</h3>
+                    <p class="text-gray-700">
+                        Professional guidance to help students make informed decisions about their academic and career paths based on aptitude and market trends.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="py-16 bg-blue-600 text-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Why Choose Easyway?</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center text-blue-600 text-3xl mx-auto mb-4">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Experienced Faculty</h3>
+                    <p class="text-blue-100">
+                        Our team consists of highly qualified and experienced educators dedicated to student success.
+                    </p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center text-blue-600 text-3xl mx-auto mb-4">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Affordable Pricing</h3>
+                    <p class="text-blue-100">
+                        Quality education at competitive prices with flexible payment options for all students.
+                    </p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center text-blue-600 text-3xl mx-auto mb-4">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Personalized Approach</h3>
+                    <p class="text-blue-100">
+                        Small class sizes and individual attention ensure each student's needs are met.
+                    </p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center text-blue-600 text-3xl mx-auto mb-4">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Global Network</h3>
+                    <p class="text-blue-100">
+                        Strong connections with universities worldwide for seamless study abroad transitions.
+                    </p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center text-blue-600 text-3xl mx-auto mb-4">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Proven Success</h3>
+                    <p class="text-blue-100">
+                        Track record of students achieving top ranks in entrance exams and university admissions.
+                    </p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center text-blue-600 text-3xl mx-auto mb-4">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Modern Methods</h3>
+                    <p class="text-blue-100">
+                        Interactive learning techniques combining traditional teaching with technology.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-blue-600 mb-12">What Our Students Say</h2>
+            
+            <div class="relative max-w-4xl mx-auto">
+                <div class="testimonial-slider overflow-hidden">
+                    <div class="flex transition-transform duration-300" id="testimonial-slides">
+                        <!-- Testimonial 1 -->
+                        <div class="testimonial-card min-w-full px-4">
+                            <div class="bg-white p-8 rounded-lg shadow-md">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mr-4">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-800">Ramesh S.</h4>
+                                        <div class="flex text-yellow-400">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="text-gray-700 italic">
+                                    "Easyway's pre-medical coaching helped me secure a top rank in the MBBS entrance exam. The faculty's dedication and personalized attention made all the difference."
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- Testimonial 2 -->
+                        <div class="testimonial-card min-w-full px-4">
+                            <div class="bg-white p-8 rounded-lg shadow-md">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mr-4">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-800">Sita M.</h4>
+                                        <div class="flex text-yellow-400">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="text-gray-700 italic">
+                                    "The abroad study guidance service was exceptional. They helped me navigate the complex application process and I'm now studying at my dream university in Australia."
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- Testimonial 3 -->
+                        <div class="testimonial-card min-w-full px-4">
+                            <div class="bg-white p-8 rounded-lg shadow-md">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mr-4">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-800">Hari P.</h4>
+                                        <div class="flex text-yellow-400">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="text-gray-700 italic">
+                                    "The +2 tuition classes provided me with a strong foundation in science subjects. The teachers are patient and explain concepts clearly until everyone understands."
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md text-blue-600 hover:bg-blue-100 transition" id="prev-testimonial">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md text-blue-600 hover:bg-blue-100 transition" id="next-testimonial">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 max-w-3xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-blue-600 mb-12">Frequently Asked Questions</h2>
+            
+            <div class="space-y-4">
+                <!-- FAQ 1 -->
+                <div class="accordion border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="accordion-button w-full text-left p-4 bg-gray-50 hover:bg-gray-100 transition flex justify-between items-center">
+                        <span class="font-bold text-gray-800">What are the class timings?</span>
+                        <i class="fas fa-chevron-down transition-transform"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="p-4 text-gray-700">
+                            Our classes run from 7 AM to 6 PM, Sunday through Friday. Specific timings for each course may vary. Please contact us for the detailed schedule of your preferred course.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ 2 -->
+                <div class="accordion border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="accordion-button w-full text-left p-4 bg-gray-50 hover:bg-gray-100 transition flex justify-between items-center">
+                        <span class="font-bold text-gray-800">How can I enroll in a course?</span>
+                        <i class="fas fa-chevron-down transition-transform"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="p-4 text-gray-700">
+                            You can enroll by visiting our academy in person or contacting us via phone at 9841533241. We'll guide you through the enrollment process and provide all necessary information about fees, schedules, and requirements.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ 3 -->
+                <div class="accordion border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="accordion-button w-full text-left p-4 bg-gray-50 hover:bg-gray-100 transition flex justify-between items-center">
+                        <span class="font-bold text-gray-800">Do you offer online classes?</span>
+                        <i class="fas fa-chevron-down transition-transform"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="p-4 text-gray-700">
+                            Yes, we offer online classes for most of our courses. The online sessions are interactive and follow the same curriculum as our in-person classes. Please inquire about specific courses for online availability.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ 4 -->
+                <div class="accordion border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="accordion-button w-full text-left p-4 bg-gray-50 hover:bg-gray-100 transition flex justify-between items-center">
+                        <span class="font-bold text-gray-800">What are the fees for your courses?</span>
+                        <i class="fas fa-chevron-down transition-transform"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="p-4 text-gray-700">
+                            Fees vary depending on the course, duration, and level of instruction. We offer competitive pricing with various payment options. Please contact us for detailed fee structures for specific courses.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ 5 -->
+                <div class="accordion border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="accordion-button w-full text-left p-4 bg-gray-50 hover:bg-gray-100 transition flex justify-between items-center">
+                        <span class="font-bold text-gray-800">Do you provide study materials?</span>
+                        <i class="fas fa-chevron-down transition-transform"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="p-4 text-gray-700">
+                            Yes, we provide comprehensive study materials for all our courses. These include textbooks, practice sheets, previous years' question papers, and our own curated study guides. Additional materials may be recommended based on individual needs.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-blue-600 mb-12">Get in Touch</h2>
+            
+            <div class="flex flex-col lg:flex-row gap-8">
+                <!-- Contact Form -->
+                <div class="lg:w-1/2">
+                    <form id="contact-form" class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-700 font-bold mb-2">Your Name</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-600" required>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-700 font-bold mb-2">Email Address</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-600" required>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="phone" class="block text-gray-700 font-bold mb-2">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-600" required>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="message" class="block text-gray-700 font-bold mb-2">Your Message</label>
+                            <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-600" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded transition duration-300">
+                            Send Message
+                        </button>
+                    </form>
+                    
+                    <div id="form-success" class="hidden mt-4 p-4 bg-green-100 text-green-800 rounded">
+                        <i class="fas fa-check-circle mr-2"></i> Your message has been sent successfully! We'll contact you soon.
+                    </div>
+                    
+                    <div id="form-error" class="hidden mt-4 p-4 bg-red-100 text-red-800 rounded">
+                        <i class="fas fa-exclamation-circle mr-2"></i> There was an error sending your message. Please try again or contact us directly.
+                    </div>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="lg:w-1/2">
+                    <div class="bg-white p-6 rounded-lg shadow-md h-full">
+                        <h3 class="text-xl font-bold text-gray-800 mb-6">Contact Information</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mr-4 mt-1">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Phone</h4>
+                                    <a href="tel:9841533241" class="text-gray-700 hover:text-blue-600 transition">9841533241</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mr-4 mt-1">
+                                    <i class="fas fa-user-tie"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Academic Director</h4>
+                                    <p class="text-gray-700">Dilli Raj Chaudhary</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mr-4 mt-1">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Location</h4>
+                                    <p class="text-gray-700">Hattiban, Lalitpur</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mr-4 mt-1">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Office Hours</h4>
+                                    <p class="text-gray-700">7 AM – 6 PM, Sunday–Friday</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="font-bold text-gray-800 mb-4">Find Us on Map</h4>
+                            <div class="bg-gray-200 h-48 rounded-lg overflow-hidden">
+                                <!-- Placeholder for map -->
+                                <div class="w-full h-full flex items-center justify-center text-gray-500">
+                                    <i class="fas fa-map-marked-alt text-3xl mr-2"></i>
+                                    <span>Easyway Educational Academy Location</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6">
+                            <a href="https://wa.me/9841533241" class="inline-flex items-center bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded transition duration-300">
+                                <i class="fab fa-whatsapp mr-2"></i> Chat on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl mr-2 overflow-hidden">
+                            <img src="https://i.imgur.com/TK75jJm.png" alt="Logo" class="w-full h-full object-cover">
+                          </div>
+                          
+                        <h3 class="text-xl font-bold">EasyWay</h3>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        Providing quality education and study abroad services to help students achieve their academic dreams.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-white transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-300 hover:text-white transition">Home</a></li>
+                        <li><a href="#about" class="text-gray-300 hover:text-white transition">About Us</a></li>
+                        <li><a href="#courses" class="text-gray-300 hover:text-white transition">Courses</a></li>
+                        <li><a href="#services" class="text-gray-300 hover:text-white transition">Services</a></li>
+                        <li><a href="#contact" class="text-gray-300 hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contact Info</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-blue-400"></i>
+                            <span class="text-gray-300">Hattiban, Lalitpur</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt mt-1 mr-3 text-blue-400"></i>
+                            <a href="tel:9841533241" class="text-gray-300 hover:text-white transition">9841533241</a>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-3 text-blue-400"></i>
+                            <a href="mailto:info@easyway.edu.np" class="text-gray-300 hover:text-white transition">info@easyway.edu.np</a>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-clock mt-1 mr-3 text-blue-400"></i>
+                            <span class="text-gray-300">7 AM - 6 PM, Sun-Fri</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Easyway Educational Academy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth Scrolling for Navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+        
+        // Highlight active navigation link on scroll
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (pageYOffset >= (sectionTop - 150)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // Testimonial Slider
+        const testimonialSlider = document.getElementById('testimonial-slides');
+        const prevTestimonial = document.getElementById('prev-testimonial');
+        const nextTestimonial = document.getElementById('next-testimonial');
+        let currentSlide = 0;
+        const totalSlides = document.querySelectorAll('.testimonial-card').length;
+        
+        function updateSlider() {
+            testimonialSlider.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+        
+        prevTestimonial.addEventListener('click', () => {
+            currentSlide = (currentSlide > 0) ? currentSlide - 1 : totalSlides - 1;
+            updateSlider();
+        });
+        
+        nextTestimonial.addEventListener('click', () => {
+            currentSlide = (currentSlide < totalSlides - 1) ? currentSlide + 1 : 0;
+            updateSlider();
+        });
+        
+        // Auto slide testimonials
+        setInterval(() => {
+            currentSlide = (currentSlide < totalSlides - 1) ? currentSlide + 1 : 0;
+            updateSlider();
+        }, 5000);
+        
+        // Accordion Functionality
+        const accordions = document.querySelectorAll('.accordion');
+        
+        accordions.forEach(accordion => {
+            const button = accordion.querySelector('.accordion-button');
+            
+            button.addEventListener('click', () => {
+                accordion.classList.toggle('active');
+                
+                // Close other accordions when one is opened
+                if (accordion.classList.contains('active')) {
+                    accordions.forEach(otherAccordion => {
+                        if (otherAccordion !== accordion && otherAccordion.classList.contains('active')) {
+                            otherAccordion.classList.remove('active');
+                        }
+                    });
+                }
+            });
+        });
+        
+        // Contact Form Submission
+        const contactForm = document.getElementById('contact-form');
+        const formSuccess = document.getElementById('form-success');
+        const formError = document.getElementById('form-error');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Simulate form submission
+            formSuccess.classList.add('hidden');
+            formError.classList.add('hidden');
+            
+            // In a real scenario, you would send the form data to a server
+            setTimeout(() => {
+                // For demo purposes, we'll just show success
+                formSuccess.classList.remove('hidden');
+                contactForm.reset();
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
